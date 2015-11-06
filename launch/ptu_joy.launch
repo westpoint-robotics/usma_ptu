@@ -1,0 +1,14 @@
+<launch>
+
+    <include file="$(find virtual_ptu)/launch/controller_manager.launch" />
+    <include file="$(find virtual_ptu)/launch/controller_spawner.launch" />  
+
+    <!-- Start the joystick node -->
+    <node respawn="true" pkg="joy" type="joy_node" name="joy" >
+        <param name="dev" type="string" value="/dev/input/js0" />
+        <param name="deadzone" value="0.12" />
+    </node> 
+
+    <node name="move_ptu_joy" pkg="virtual_ptu" type="move_ptu_joy.py" output="screen" />
+
+</launch>

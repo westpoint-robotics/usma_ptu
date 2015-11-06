@@ -1,0 +1,9 @@
+updateFreq: 10.00
+teleopGain: -0.001
+camera_limits:
+    pan:
+        lower: -1.57
+        upper: 1.57
+    tilt:
+        lower: -1.57
+        upper: 1.57

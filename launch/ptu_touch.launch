@@ -1,0 +1,12 @@
+<launch>
+
+    <rosparam command="load" file="$(find virtual_ptu)/config/ptu.yaml" />
+
+    <include file="$(find ptu_virtual)/launch/controller_manager.launch" />
+    <include file="$(find ptu_virtual)/launch/controller_spawner.launch" />  
+
+    <!-- Start the touch gimbal node -->
+
+    <node name="move_ptu_touch" pkg="virtual_ptu" type="move_ptu_touch.py" output="screen" />
+
+</launch>

@@ -1,5 +1,7 @@
 <launch>
 
+    <rosparam command="load" file="$(find virtual_ptu)/config/ptu.yaml" />
+
     <include file="$(find virtual_ptu)/launch/controller_manager.launch" />
     <include file="$(find virtual_ptu)/launch/controller_spawner.launch" />  
 

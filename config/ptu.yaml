@@ -1,9 +1,14 @@
 updateFreq: 10.00
 teleopGain: -0.001
 camera_limits:
+    speed: 0.5
     pan:
         lower: -1.57
         upper: 1.57
     tilt:
         lower: -1.57
         upper: 1.57
+axes_map:
+    pan: 0
+    tilt: 1 
+     

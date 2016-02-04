@@ -18,17 +18,17 @@ from geometry_msgs.msg import Twist
 class MovePTU():
     def __init__(self):
         self.is_running = True
-        self.step_size = 0.5 * 3.14 / 180.0
+        self.step_size = rospy.get_param('/camera_limits/speed')
         self.touch_data = None
 	self.teleopTime = time.time()
         
         rospy.init_node('move_ptu_touch', anonymous=True)
 	self.pan_limit = rospy.get_param('/camera_limits/pan')
 	self.tilt_limit = rospy.get_param('/camera_limits/tilt')
-        rospy.Subscriber('/teleopCam', Twist, self.read_touch_data)
+        rospy.Subscriber('/usma_remote/right', Twist, self.read_touch_data, queue_size=10)
 
-        self.servo_position_pan = rospy.Publisher('/pan_controller/command', Float64)
-        self.servo_position_tilt = rospy.Publisher('/tilt_controller/command', Float64)
+        self.servo_position_pan = rospy.Publisher('/pan_controller/command', Float64, queue_size=10)
+        self.servo_position_tilt = rospy.Publisher('/tilt_controller/command', Float64, queue_size=10)
 
         self.pan_joint = 0.0
 	self.tilt_joint = 0.0
@@ -44,7 +44,7 @@ class MovePTU():
         while self.is_running:
             if not self.touch_data == None and (time.time() - self.teleopTime) < 0.2:
 		self.pan_joint += 1 * self.touch_data.angular.z * self.step_size
-		self.tilt_joint += 1 * self.touch_data.angular.x * self.step_size
+		self.tilt_joint += 1 * self.touch_data.linear.x * self.step_size
 
 	    if self.pan_joint<self.pan_limit['lower']:
 		self.pan_joint=self.pan_limit['lower']

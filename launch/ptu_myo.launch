@@ -1,0 +1,13 @@
+<launch>
+
+    <rosparam command="load" file="$(find usma_ptu)/config/ptu.yaml" />
+
+    <include file="$(find usma_ptu)/launch/controller_manager.launch" />
+    <include file="$(find usma_ptu)/launch/controller_spawner.launch" />  
+
+    <!-- Start the myo node -->
+
+    <!-- Start the myo-dynamixel node -->
+    <node name="move_ptu_myo" pkg="usma_ptu" type="move_ptu_myo.py" output="screen" />
+
+</launch>

@@ -1,4 +1,4 @@
-# virtual_ptu
+# usma_ptu
 
 Quick Start Guide for using the virtual_ptu package to control a dynamixel pan-tilt unit
 

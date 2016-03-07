@@ -2,7 +2,7 @@
 
 <launch>
     <!-- Load controller configuration to parameter server -->
-    <rosparam file="$(find virtual_ptu)/config/dynamixel_joint_controllers.yaml" command="load"/>
+    <rosparam file="$(find usma_ptu)/config/dynamixel_joint_controllers.yaml" command="load"/>
     
     <!-- start specified joint controllers -->
     <node name="dynamixel_controller_spawner" pkg="dynamixel_controllers" type="controller_spawner.py"

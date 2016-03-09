@@ -1,9 +1,9 @@
 <launch>
 
-    <rosparam command="load" file="$(find virtual_ptu)/config/ptu.yaml" />
+    <rosparam command="load" file="$(find usma_ptu)/config/ptu.yaml" />
 
-    <include file="$(find virtual_ptu)/launch/controller_manager.launch" />
-    <include file="$(find virtual_ptu)/launch/controller_spawner.launch" />  
+    <include file="$(find usma_ptu)/launch/controller_manager.launch" />
+    <include file="$(find usma_ptu)/launch/controller_spawner.launch" />  
 
     <!-- Start the joystick node -->
     <node respawn="true" pkg="joy" type="joy_node" name="joy" >
@@ -11,6 +11,6 @@
         <param name="deadzone" value="0.12" />
     </node> 
 
-    <node name="move_ptu_joy" pkg="virtual_ptu" type="move_ptu_joy.py" output="screen" />
+    <node name="move_ptu_joy" pkg="usma_ptu" type="move_ptu_joy.py" output="screen" />
 
 </launch>

@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-PKG = 'virtual_ptu'
+PKG = 'usma_ptu'
 
 import roslib; roslib.load_manifest(PKG)
 

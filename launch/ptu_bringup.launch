@@ -1,0 +1,8 @@
+<launch>
+
+    <rosparam command="load" file="$(find usma_ptu)/config/ptu.yaml" />
+
+    <include file="$(find usma_ptu)/launch/controller_manager.launch" />
+    <include file="$(find usma_ptu)/launch/controller_spawner.launch" />  
+
+</launch>

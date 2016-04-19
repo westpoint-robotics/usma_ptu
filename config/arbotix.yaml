@@ -1,0 +1,20 @@
+port: /dev/ttyUSB0
+rate: 15
+
+joints: {
+    shoulder_pan_joint: {id: 1, invert: false, neutral: 90, max_angle: 180, min_angle: -180, max_speed: 180},
+    shoulder_pitch_joint: {id: 2, invert: false, neutral: 205, max_angle: 240, min_angle: -60, max_speed: 180},
+    elbow_pitch_joint: {id: 3, invert: false, neutral: 205, max_angle: 240, min_angle: -60, max_speed: 180},
+    wrist_pitch_joint: {id: 4, invert: false, neutral: 205, max_angle: 240, min_angle: -60, max_speed: 180},
+    wrist_roll_joint: {id: 5, invert: false, neutral: 205, max_angle: 240, min_angle: -60, max_speed: 180},
+    gripper: {id: 6, invert: false},
+}
+
+controllers: {
+  arm_controller: {
+    type: follow_controller,
+    joints: [shoulder_pan_joint, shoulder_pitch_joint, elbow_pitch_joint, wrist_pitch_joint, wrist_roll_joint],
+    action_name: arm_controller/follow_joint_trajectory,
+    onboard: false
+  }
+}

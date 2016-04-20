@@ -20,13 +20,14 @@ Quick Start Guide for using the usma_ptu package to control a dynamixel pan-tilt
 - To configure the Dynamixel IDs, read this [tutorial](http://support.robotis.com/en/product/bioloid/beginnerkit/usefullinfo/dxl_configuration.htm#ID_Change)
  - Ensure that your dynamixels are powered via an external power source and connected to a hub.
 
-![Courtesy of Trossen Robotics](http://www.trossenrobotics.com/resize/shared/images/PImages/IL-6PHUB-c.jpg?bw=1000&bh=1000)
+![Alt Text](http://www.trossenrobotics.com/resize/shared/images/PImages/IL-6PHUB-c.jpg?bw=1000&bh=1000)
+Picture courtesy of Trossen Robotucs
 
 5. Open up a new terminal and run: "roslaunch usma_ptu ptu_joy.launch"
  - This launch file calls on two launch files:
   - Dynamixel control manager: controller_manager.launch
   - Dynamixel control spawner: controller_spawner.launch
-  - It also starts the joystick node "joy_node" 
-6. Now you will be able to control the pan-tilt using the Joystick
+  - It also starts the joystick node.
+6. Now you will be able to control the pan-tilt using the joystick.
  - The left-right motion on the joystick (x-axis) will provide the panning.
  - The forward-back motion (y-axis) will provide the tilting.

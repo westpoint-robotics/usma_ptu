@@ -39,20 +39,18 @@ Picture courtesy of Trossen Robotics
 
 - Download the arbotix_ros source code.
  - `cd ~/catkin_ws/src`
- - `git clone https://github.com/vanadiumlabs/arbotix_ros
+ - `git clone https://github.com/vanadiumlabs/arbotix_ros`
  - `cd ..`
  - `catkin_make`
-
 - Configuration and setup is based on the [arbotix_ros tutorial](http://wiki.ros.org/arbotix_python).
  - Note: these instructions are extremely outdated. Key changes include:
   - controllerGUI.py is now arbotix_gui
   - terminal.py is now arbotix_terminal
   - driver.py is now renamed arbotix_driver
   - dynamixels is now joints in the YAML file
-
 - Connect your Arbotix-M as pictured below:
 
-![Alt Text](http://learn.trossenrobotics.com/images/tutorials/arbotixM/arbotixm_single_servo.png)
+![Alt Text](http://learn.trossenrobotics.com/images/tutorials/arbotixM/arbotixm_single_servo.png) 
 Picture courtesy of Trossen Robotics
 
 - Open up a new terminal and run:

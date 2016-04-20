@@ -5,11 +5,11 @@ Quick Start Guide for using the usma_ptu package to control a dynamixel pan-tilt
 
 - Download the usma_ptu source code.
  - Clone the source code into your catkin workspace src folder.
- - `$ cd ~/catkin_ws/src`
- - `$ git clone https://github.com/westpoint-robotics/usma_ptu.git`
+ - `cd ~/catkin_ws/src`
+ - `git clone https://github.com/westpoint-robotics/usma_ptu.git`
  - Directory structure should look like ~/catkin_ws/src/usma_ptu
- - `$ cd ..`
- - `$ catkin_make`
+ - `cd ..`
+ - `catkin_make`
 
 ### For using a USB2Dynamixel adapter or equivalent:
 

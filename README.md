@@ -50,9 +50,9 @@ Picture courtesy of Trossen Robotics
   - dynamixels is now joints in the YAML file
 - Connect your Arbotix-M as pictured below:
 
-![Alt Text](http://learn.trossenrobotics.com/images/tutorials/arbotixM/arbotixm_single_servo.png) 
-Picture courtesy of Trossen Robotics
+![Alt Text](http://learn.trossenrobotics.com/images/tutorials/arbotixM/arbotixm_single_servo.png) Picture courtesy of Trossen Robotics
 
+- Ensure that your dynamixels are numbered with proper servo IDs and daisy-chained together.
 - Open up a new terminal and run:
  - `roslaunch usma_ptu arbotix.launch`
 - Open up a new terminal and run:

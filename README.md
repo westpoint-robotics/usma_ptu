@@ -1,7 +1,6 @@
 # usma_ptu
 
-## Quick Start Guide for using the usma_ptu package to control a dynamixel pan-tilt unit.  These instructions can also be extended to control a dynamixel-based multi-link arm.  There are currently three interfaces: a touch screen, a joystick, and a myo band.    
-
+Quick Start Guide for using the usma_ptu package to control a dynamixel pan-tilt unit.  These instructions can also be extended to control a dynamixel-based multi-link arm.  There are currently three interfaces: a touch screen, a joystick, and a myo band. 
 1. Download the usma_ptu source code.
  - Clone the source code into your catkin workspace src folder.
  - `$ cd ~/catkin_ws/src`
@@ -9,7 +8,7 @@
  - Directory structure should look like ~/catkin_ws/src/usma_ptu
  - `$ catkin_make`
 
-## For using a USB2Dynamixel Adapter or equivalent:
+### For using a USB2Dynamixel Adapter or equivalent:
 
 1. Install the [dynamixel_motor] {http://wiki.ros.org/dynamixel_motor?distro=indigo} package.
 2. Connect a USB joystick.  Esnure the ROS [joy]{http://wiki.ros.org/joy/Tutorials/ConfiguringALinuxJoystick} package is installed.

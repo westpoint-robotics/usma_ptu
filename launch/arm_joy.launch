@@ -1,0 +1,16 @@
+<launch>
+
+    <rosparam command="load" file="$(find usma_ptu)/config/arm.yaml" />
+
+    <include file="$(find usma_ptu)/launch/controller_manager.launch" />
+    <include file="$(find usma_ptu)/launch/arm_controller_spawner.launch" />  
+
+    <!-- Start the joystick node -->
+    <node respawn="true" pkg="joy" type="joy_node" name="joy" >
+        <param name="dev" type="string" value="/dev/input/js0" />
+        <param name="deadzone" value="0.12" />
+    </node> 
+
+    <node name="move_arm_joy" pkg="usma_ptu" type="move_arm_joy.py" output="screen" />
+
+</launch>

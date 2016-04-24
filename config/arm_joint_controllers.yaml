@@ -1,0 +1,77 @@
+shoulder_pan_joint_controller:
+    controller:
+        package: dynamixel_controllers
+        module: joint_position_controller
+        type: JointPositionController
+    joint_name: shoulder_pan_joint
+    joint_speed: 1.0
+    motor:
+        id: 1
+        init: 2048
+        min: 0
+        max: 4096
+
+shoulder_flex_joint_controller:
+    controller:
+        package: dynamixel_controllers
+        module: joint_position_controller
+        type: JointPositionController
+    joint_name: shoulder_flex_joint
+    joint_speed: 1.0
+    motor:
+        id: 2
+        init: 2048
+        min: 0
+        max: 4096
+
+elbow_flex_joint_controller:
+    controller:
+        package: dynamixel_controllers
+        module: joint_position_controller
+        type: JointPositionController
+    joint_name: elbow_flex_joint
+    joint_speed: 1.0
+    motor:
+        id: 3
+        init: 2048
+        min: 0
+        max: 4096
+
+wrist_flex_joint_controller:
+    controller:
+        package: dynamixel_controllers
+        module: joint_position_controller
+        type: JointPositionController
+    joint_name: wrist_flex_joint
+    joint_speed: 1.0
+    motor:
+        id: 4
+        init: 2048
+        min: 0
+        max: 4096
+
+wrist_roll_joint_controller:
+    controller:
+        package: dynamixel_controllers
+        module: joint_position_controller
+        type: JointPositionController
+    joint_name: wrist_roll_joint
+    joint_speed: 1.0
+    motor:
+        id: 5
+        init: 512
+        min: 0
+        max: 1024
+
+gripper_controller:
+    controller:
+        package: dynamixel_controllers
+        module: joint_position_controller
+        type: JointPositionController
+    joint_name: gripper
+    joint_speed: 1.0
+    motor:
+        id: 6
+        init: 512
+        min: 0
+        max: 1024

@@ -1,0 +1,10 @@
+axes_map:
+    shoulder_pan_axis: 0
+    shoulder_flex_axis: 1
+    elbow_flex_axis: 7
+    wrist_flex_axis: 4
+    wrist_roll_axis: 3
+    gripper_axis: 6
+
+
+     

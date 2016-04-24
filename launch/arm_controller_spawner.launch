@@ -1,0 +1,19 @@
+<!-- -*- mode: XML -*- -->
+
+<launch>
+    <!-- Load controller configuration to parameter server -->
+    <rosparam file="$(find usma_ptu)/config/arm_joint_controllers.yaml" command="load"/>
+    
+    <!-- start specified joint controllers -->
+    <node name="dynamixel_controller_spawner" pkg="dynamixel_controllers" type="controller_spawner.py"
+          args="--manager=dxl_manager
+                --port=dynamixel_port
+                --type=simple
+                shoulder_pan_joint_controller
+                shoulder_flex_joint_controller
+                elbow_flex_joint_controller
+		wrist_flex_joint_controller
+                wrist_roll_joint_controller
+                gripper_controller"
+          output="screen"/>
+</launch>

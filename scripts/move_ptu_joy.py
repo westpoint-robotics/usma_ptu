@@ -22,15 +22,15 @@ class MovePTU():
         self.prev_time = time.time()
         
         rospy.init_node('move_ptu_joy', anonymous=True)
-	self.pan_axis = rospy.get_param('/axes_map/pan')
-	self.tilt_axis = rospy.get_param('/axes_map/tilt')
+        self.pan_axis = rospy.get_param('/axes_map/pan')
+        self.tilt_axis = rospy.get_param('/axes_map/tilt')
 
         rospy.Subscriber('/joy', Joy, self.read_joystick_data)
         self.servo_position_pan = rospy.Publisher('/pan_controller/command', Float64)
         self.servo_position_tilt = rospy.Publisher('/tilt_controller/command', Float64)
 
         self.pan_joint = 0.0
-	self.tilt_joint = 0.0
+        self.tilt_joint = 0.0
 
     def read_joystick_data(self, data):
         self.joy_data = data
@@ -39,21 +39,17 @@ class MovePTU():
         self.prev_time = cur_time
 
     def update_ptu_position(self):
-        while self.is_running:
+        rate = rospy.Rate(10) # 10hz
+        while not rospy.is_shutdown():
             if self.joy_data:
-		self.pan_joint += 1 * self.joy_data.axes[self.pan_axis] * self.step_size
-		self.tilt_joint += 1 * self.joy_data.axes[self.tilt_axis] * self.step_size
-	    self.servo_position_pan.publish(self.pan_joint)
-	    self.servo_position_tilt.publish(self.tilt_joint)
-            time.sleep(0.05)
+                self.pan_joint += 1 * self.joy_data.axes[self.pan_axis] * self.step_size
+                self.tilt_joint += 1 * self.joy_data.axes[self.tilt_axis] * self.step_size
+                self.servo_position_pan.publish(self.pan_joint)
+                self.servo_position_tilt.publish(self.tilt_joint)
+	        rate.sleep()
 
 if __name__ == '__main__':
     try:
         move_ptu = MovePTU()
-        t = Thread(target=move_ptu.update_ptu_position)
-        t.start()
-        rospy.spin()
-        move_ptu.alive = False
-        t.join()
+        move_ptu.update_ptu_position()
     except rospy.ROSInterruptException: pass
-

@@ -8,7 +8,6 @@
     <node name="dynamixel_controller_spawner" pkg="dynamixel_controllers" type="controller_spawner.py"
           args="--manager=dxl_manager
                 --port=pan_tilt_port
-                --type=simple
                 pan_controller
                 tilt_controller"
           output="screen"/>
